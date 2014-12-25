@@ -1,19 +1,19 @@
-<project name="unit-tests" default="help" basedir=".">
+<project name="unit-tests" default="help" basedir="">
 
   <!-- Environment Variables -->
 
   <property name="debug" value="true" />
-  <property file="./build.properties" />
+  <property file="build.properties" />
   <property name="guitar.version" value="3.0" />
 
   <property name="ant.dir" value="${shared.lib.dir}/${ant.lib.dir}" />
   <property name="test.dir" value="." />
   <property name="cobertura.dir" value="${shared.lib.dir}/cobertura" />
-  <property name="report.dir" value="${test.dir}/reports" />
-  <property name="report.system.dir" value="${test.dir}/reports-system"/>
-  <property name="coverage.dir" value="${test.dir}/coverage" />
-  <property name="jar.dir" value="${test.dir}/jars" />
-  <property name="doc.dir" value="${test.dir}/doc" />
+  <property name="report.dir" value="/reports" />
+  <property name="report.system.dir" value="/reports-system"/>
+  <property name="coverage.dir" value="/coverage" />
+  <property name="jar.dir" value="/jars" />
+  <property name="doc.dir" value="/doc" />
 
   <!-- Second Party Dependencies Included in Distribution -->
 
@@ -102,7 +102,7 @@
   <!-- Build the Unit Tests -->
 
   <target description="Build the unit tests" name="build-tests" depends="build-deps">
-    <javac srcdir="${test.dir}" destdir="${test.dir}" debug="${debug}" deprecation="${deprecation}"  debuglevel="vars,lines,source">
+    <javac srcdir="${test.dir}" destdir="" debug="${debug}" deprecation="${deprecation}"  debuglevel="vars,lines,source">
       <classpath>
 		<fileset dir="${shared.lib.dir}/" includes="**/*.jar" erroronmissingdir="true" />
     	<fileset dir="${dist.lib.dir}/" includes="*.jar" erroronmissingdir="true" />
@@ -119,10 +119,10 @@
     <mkdir dir="${jar.dir}" />
 
     <jar jarfile="${jar.dir}/${module}-unit-tests.jar" update="true">
-      <fileset dir="${test.dir}" includes="**/*.class" />
+      <fileset dir="" includes="**/*.class" />
     </jar>
   	<jar jarfile="${jar.dir}/${module}-small-unit-tests.jar" update="true">
-  		<fileset dir="${test.dir}">
+  		<fileset dir="">
   		    <include name="**/WebReplayerConfigurationTest.class"/>
 	      	<include name="**/WebReplayerMonitorTest.class"/>
   		</fileset>
@@ -163,7 +163,7 @@
       <formatter type="xml" />
 
       <batchtest todir="${report.dir}" >
-	<fileset dir="${test.dir}">
+	<fileset dir="">
 	  <include name="**/*.java" />
 	</fileset>
       </batchtest>
@@ -202,7 +202,7 @@
 	      <formatter type="xml" />
 
 	      <batchtest todir="${report.dir}" >
-	      	<fileset dir="${test.dir}">
+	      	<fileset dir="">
 	      	  		    <include name="**/WebReplayerConfigurationTest.class"/>
 	      	  		    <include name="**/WebReplayerMonitorTest.class"/>
 				    <include name="**/WebReplayerTest.class"/>
@@ -243,7 +243,7 @@
 	      <formatter type="xml" />
 
 	      <batchtest todir="${report.system.dir}" >
-	      	<fileset dir="${test.dir}">
+	      	<fileset dir="">
 	      	  		    <include name="**/SystemTest.class"/>
 				    	<include name="**/SystemTestTerpConnect.class"/>
 	      				<include name="**/SystemTestSurvey.class"/>
@@ -353,7 +353,7 @@
     <delete dir="${jar.dir}" />
 
     <delete>
-      <fileset dir="${test.dir}">
+      <fileset dir="">
 	<include name="**/*.class" />
       </fileset>
     </delete>

@@ -1,4 +1,4 @@
-package simple;
+package test.simple;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.RenderedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;

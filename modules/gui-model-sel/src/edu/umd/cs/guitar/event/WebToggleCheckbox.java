@@ -29,7 +29,8 @@ public class WebToggleCheckbox implements GEvent {
 			Hashtable<String, List<String>> optionalData)  {
 		if(gComponent instanceof WebComponent) {
 			WebComponent we = (WebComponent) gComponent;
-			we.getElement().toggle();
+//			we.getElement().toggle();
+			we.getElement().click();
 		}
 	}
 

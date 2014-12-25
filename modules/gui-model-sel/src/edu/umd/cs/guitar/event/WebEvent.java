@@ -3,9 +3,10 @@ package edu.umd.cs.guitar.event;
 import java.util.Hashtable;
 import java.util.List;
 
-import org.openqa.selenium.RenderedWebElement;
+//import org.openqa.selenium.RenderedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.WebDriver
 
 import edu.umd.cs.guitar.model.GComponent;
 import edu.umd.cs.guitar.model.WebComponent;
@@ -19,8 +20,11 @@ public class WebEvent implements GEvent, GEventConfigurable {
 	public boolean isSupportedBy(GComponent gComponent) {
 		if(gComponent instanceof WebComponent) {
 			WebComponent webComponent = (WebComponent) gComponent;
-			if(webComponent.getElement() instanceof RenderedWebElement) {
-				RenderedWebElement renderedWebElement = (RenderedWebElement) webComponent.getElement();
+//			if(webComponent.getElement() instanceof RenderedWebElement) {
+//				RenderedWebElement renderedWebElement = (RenderedWebElement) webComponent.getElement();
+//				if(renderedWebElement.isDisplayed()) {
+			if(webComponent.getElement() instanceof WebElement) {
+				WebElement renderedWebElement = (WebElement) webComponent.getElement();
 				if(renderedWebElement.isDisplayed()) {
 					if("a".equals(webComponent.getElement().getTagName().toLowerCase())) {
 						String href = webComponent.getElement().getAttribute("href");
@@ -57,11 +61,17 @@ public class WebEvent implements GEvent, GEventConfigurable {
 		// smcmaster says: This is wrong; for "javascript:" URLs, click() is exactly what we should to.
 		if(gComponent instanceof WebComponent) { 
 			WebElement el = ((WebComponent) gComponent).getElement();
-			
-			if(!(el instanceof RenderedWebElement)) {
+
+//			if(!(el instanceof RenderedWebElement)) {
+//				return;
+//			} else {
+//				if(!((RenderedWebElement) el).isDisplayed())
+//					return;
+//			}
+			if(!(el instanceof WebElement)) {
 				return;
 			} else {
-				if(!((RenderedWebElement) el).isDisplayed())
+				if(!((WebElement) el).isDisplayed())
 					return;
 			}
 			

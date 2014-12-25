@@ -3,7 +3,7 @@ package edu.umd.cs.guitar.event;
 import java.util.Hashtable;
 import java.util.List;
 
-import org.openqa.selenium.RenderedWebElement;
+//import org.openqa.selenium.RenderedWebElement;
 import org.openqa.selenium.WebElement;
 
 import edu.umd.cs.guitar.model.GComponent;
@@ -17,8 +17,11 @@ public class WebTextBox implements GEvent {
 	public boolean isSupportedBy(GComponent gComponent) {
 		if(gComponent instanceof WebComponent) {
 			WebComponent webComponent = (WebComponent) gComponent;
-			if( webComponent.getElement() instanceof RenderedWebElement ) {
-				RenderedWebElement renderedWebElement = (RenderedWebElement) webComponent.getElement();
+//			if( webComponent.getElement() instanceof RenderedWebElement ) {
+//				RenderedWebElement renderedWebElement = (RenderedWebElement) webComponent.getElement();
+//				if(renderedWebElement.isDisplayed()) {
+			if( webComponent.getElement() instanceof WebElement ) {
+				WebElement renderedWebElement = (WebElement) webComponent.getElement();
 				if(renderedWebElement.isDisplayed()) {
 					if("input".equals(webComponent.getElement().getTagName().toLowerCase())) {
 						String type = webComponent.getElement().getAttribute("type").toLowerCase();
@@ -48,10 +51,10 @@ public class WebTextBox implements GEvent {
 		if(gComponent instanceof WebComponent) { 
 			WebElement el = ((WebComponent) gComponent).getElement();
 			
-			if(!(el instanceof RenderedWebElement)) {
+			if(!(el instanceof WebElement)) {
 				return;
 			} else {
-				if(!((RenderedWebElement) el).isDisplayed())
+				if(!((WebElement) el).isDisplayed())
 					return;
 			}
 			

@@ -26,13 +26,22 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.openqa.selenium.RenderedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+// [smandreev] attempt to replace old selenium 1.0 with selenium 2.0 (aka WebDriver)
+//import org.seleniumhq.selenium.RenderedWebElement;
+//import org.seleniumhq.selenium.WebDriver;
+//import org.seleniumhq.selenium.htmlunit.HtmlUnitDriver;
+//import org.seleniumhq.selenium.ie.InternetExplorerDriver;
+//import org.seleniumhq.selenium.WebElement;
+//import org.seleniumhq.selenium.chrome.ChromeDriver;
+//import org.seleniumhq.selenium.firefox.FirefoxDriver;
+
 
 import edu.umd.cs.guitar.event.EventManager;
 import edu.umd.cs.guitar.event.GEvent;
@@ -111,10 +120,10 @@ public class WebRipperMonitor extends GRipperMonitor {
 		
 		WebElement el = ((WebComponent) component).getElement();
 		
-		if(!(el instanceof RenderedWebElement)) {
+		if(!(el instanceof WebElement)) {
 			return;
 		} else {
-			if(!((RenderedWebElement) el).isDisplayed())
+			if(!((WebElement) el).isDisplayed())
 				return;
 		}
 		

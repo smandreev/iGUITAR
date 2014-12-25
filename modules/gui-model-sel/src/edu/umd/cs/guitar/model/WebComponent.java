@@ -19,12 +19,13 @@
  */
 package edu.umd.cs.guitar.model;
 
-import java.awt.Point;
+//import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.RenderedWebElement;
+import org.openqa.selenium.Point;
+//import org.openqa.selenium.RenderedWebElement;
 import org.openqa.selenium.WebElement;
 
 import edu.umd.cs.guitar.event.EventManager;
@@ -224,8 +225,12 @@ public class WebComponent extends GComponent {
 
 	@Override
 	public int getX() {
-		if(element instanceof RenderedWebElement) {
-			Point p =  ((RenderedWebElement) element).getLocation();
+
+//		if(element instanceof RenderedWebElement) {
+//			Point p =  ((RenderedWebElement) element).getLocation();
+		if(element instanceof WebElement) {
+//			Point p =  ((WebElement) element).getLocation();
+			Point p =  element.getLocation();
 			
 			return (int) p.getX();
 		}
@@ -234,8 +239,10 @@ public class WebComponent extends GComponent {
 
 	@Override
 	public int getY() {
-		if(element instanceof RenderedWebElement) {
-			Point p =  ((RenderedWebElement) element).getLocation();
+//		if(element instanceof RenderedWebElement) {
+//			Point p =  ((RenderedWebElement) element).getLocation();
+		if(element instanceof WebElement) {
+			Point p =  element.getLocation();
 			
 			return (int) p.getY();
 		}
