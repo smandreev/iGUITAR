@@ -1,0 +1,37 @@
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.6
+    version = '1.3'
+
+    repositories {
+        mavenCentral()
+    }
+
+    task sourceJar(type: Jar) {
+        classifier = 'resources'
+        from project.sourceSets.main.java
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+    }
+
+    task printProps2 << {
+        println gradlePropertiesProp
+        println envProjectProp
+        println System.properties['system']
+    }
+    println name
+    println 'project.name: ' + project.name
+    println 'project: ' + project
+    println 'path: ' + path
+    println 'description: ' + description
+    println 'projectDir: ' + projectDir
+    println 'buildDir: ' + buildDir
+    println 'group: ' + group
+    println 'version: ' + version
+    println 'ant: ' + ant
+
+    def selName = "sel"
+}

@@ -1,0 +1,17 @@
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+dependencies {
+    compile project(':gui-model-core')
+    compile project(':graph2graph-core')
+    compile project(':graph2graph-efg2eig')
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

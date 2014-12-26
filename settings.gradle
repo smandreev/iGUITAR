@@ -1,0 +1,99 @@
+rootProject.name = 'iGUITAR'
+println 'This is executed during the initialization phase. See \'gradle.settings\' file'
+
+include 'modules/abs2exec-tc-core'
+rootProject.children.find { it.name == 'modules/abs2exec-tc-core' }.name = 'abs2exec-tc-core'
+
+include 'modules/abs2exec-tc-efg2eig'
+rootProject.children.find { it.name == 'modules/abs2exec-tc-efg2eig' }.name = 'abs2exec-tc-efg2eig'
+
+include 'modules/abs2exec-tc-path2root'
+rootProject.children.find { it.name == 'modules/abs2exec-tc-path2root' }.name = 'abs2exec-tc-path2root'
+
+include 'modules/graph2graph-core'
+rootProject.children.find { it.name == 'modules/graph2graph-core' }.name = 'graph2graph-core'
+
+include 'modules/graph2graph-efg2ecig'
+rootProject.children.find { it.name == 'modules/graph2graph-efg2ecig' }.name = 'graph2graph-efg2ecig'
+
+include 'modules/graph2graph-efg2eig'
+rootProject.children.find { it.name == 'modules/graph2graph-efg2eig' }.name = 'graph2graph-efg2eig'
+
+include 'modules/graph2graph-graph-info'
+rootProject.children.find { it.name == 'modules/graph2graph-graph-info' }.name = 'graph2graph-graph-info'
+
+include 'modules/graph-converter'
+rootProject.children.find { it.name == 'modules/graph-converter' }.name = 'graph-converter'
+
+include 'modules/gui-model-adr'
+rootProject.children.find { it.name == 'modules/gui-model-adr' }.name = 'gui-model-adr'
+
+include 'modules/gui-model-core'
+rootProject.children.find { it.name == 'modules/gui-model-core' }.name = 'gui-model-core'
+
+include 'modules/gui-model-iph'
+rootProject.children.find { it.name == 'modules/gui-model-iph' }.name = 'gui-model-iph'
+
+include 'modules/gui-model-jfc'
+rootProject.children.find { it.name == 'modules/gui-model-jfc' }.name = 'gui-model-jfc'
+
+include 'modules/gui-model-sel'
+rootProject.children.find { it.name == 'modules/gui-model-sel' }.name = 'gui-model-sel'
+
+include 'modules/gui-model-swt'
+rootProject.children.find { it.name == 'modules/gui-model-swt' }.name = 'gui-model-swt'
+
+include 'modules/gui-replayer-core'
+rootProject.children.find { it.name == 'modules/gui-replayer-core' }.name = 'gui-replayer-core'
+
+include 'modules/gui-replayer-iph'
+rootProject.children.find { it.name == 'modules/gui-replayer-iph' }.name = 'gui-replayer-iph'
+
+include 'modules/gui-replayer-jfc'
+rootProject.children.find { it.name == 'modules/gui-replayer-jfc' }.name = 'gui-replayer-jfc'
+
+include 'modules/gui-replayer-sel'
+rootProject.children.find { it.name == 'modules/gui-replayer-sel' }.name = 'gui-replayer-sel'
+
+include 'modules/gui-replayer-swt'
+rootProject.children.find { it.name == 'modules/gui-replayer-swt' }.name = 'gui-replayer-swt'
+
+include 'modules/gui-ripper-core'
+rootProject.children.find { it.name == 'modules/gui-ripper-core' }.name = 'gui-ripper-core'
+
+include 'modules/gui-ripper-iph'
+rootProject.children.find { it.name == 'modules/gui-ripper-iph' }.name = 'gui-ripper-iph'
+
+include 'modules/gui-ripper-jfc'
+rootProject.children.find { it.name == 'modules/gui-ripper-jfc' }.name = 'gui-ripper-jfc'
+
+include 'modules/gui-ripper-sel'
+rootProject.children.find { it.name == 'modules/gui-ripper-sel' }.name = 'gui-ripper-sel'
+
+include 'modules/gui-ripper-swt'
+rootProject.children.find { it.name == 'modules/gui-ripper-swt' }.name = 'gui-ripper-swt'
+
+include 'modules/guistructure2graph-core'
+rootProject.children.find { it.name == 'modules/guistructure2graph-core' }.name = 'guistructure2graph-core'
+
+include 'modules/guistructure2graph-efg'
+rootProject.children.find { it.name == 'modules/guistructure2graph-efg' }.name = 'guistructure2graph-efg'
+
+include 'modules/testcase-generator-core'
+rootProject.children.find { it.name == 'modules/testcase-generator-core' }.name = 'testcase-generator-core'
+
+include 'modules/testcase-generator-program-analysis'
+rootProject.children.find {
+    it.name == 'modules/testcase-generator-program-analysis'
+}.name = 'testcase-generator-program-analysis'
+
+include 'modules/testcase-generator-random-sequence-length'
+rootProject.children.find {
+    it.name == 'modules/testcase-generator-random-sequence-length'
+}.name = 'testcase-generator-random-sequence-length'
+
+include 'modules/testcase-generator-sequence-length'
+rootProject.children.find {
+    it.name == 'modules/testcase-generator-sequence-length'
+}.name = 'testcase-generator-sequence-length'
+
